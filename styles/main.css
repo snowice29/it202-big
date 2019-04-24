@@ -35,12 +35,19 @@ body{
     text-transform: uppercase;
 }
 
+.nav-link{
+    font-size: 1.4rem;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .jumbo{
     margin-top: 2rem;
 }
 
 .jumbotron{
-    height: 60vh;
+    height: 50vh;
     background-image: linear-gradient(to right top, #8519e9, #007dff, #009ff7, #00b19e, #31bb4e);
     color: white;
     font-family: 'Raleway',sans-serif;
@@ -58,5 +65,140 @@ span{
     color: white;
 }
 
-/* DISMISSABLE DRAWER */
+#map{
+    height: 80vh; 
+    width: 100%;
+    margin: 40px auto; 
+}
 
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1200px){
+
+    .display-3{
+        font-size: 1.5rem;
+    }
+
+    #jumbo-text{
+        font-size: 1rem;
+    }
+
+    #map{
+        height: 60vh; 
+        width: 100%;
+        margin: 40px auto; 
+    }
+    
+}
+
+
+.form-group{
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto;
+}
+input{
+    height: 5rem;
+    width: 10rem;
+}
+
+.btn-search{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+}
+/* ********************************************* */
+#apiDiv {
+    border: dashed 2px #CCC;
+    padding: 10px;
+    padding-left: 20px;
+}
+ 
+    #apiDiv input, #apiDiv button {
+        font-size: 25px;
+        color: #000;
+    }
+ 
+    #apiDiv h4 {
+        margin: 10px 0;
+    }
+ 
+    #apiDiv .imageDiv {
+        text-align: center;
+    }
+ 
+        #apiDiv .imageDiv img {
+            display: none;
+        }
+ 
+    #apiDiv #message {
+        padding-top: 10px;
+    }
+ 
+        #apiDiv #message .resultDiv {
+            background: #FFF;
+            display: inline-block;
+        }
+ 
+            #apiDiv #message .resultDiv &gt; p {
+                color: #000;
+                display: inline-block;
+                width: 95%;
+                padding: 10px;
+                border-bottom: double 2px #CCC;
+            }
+ 
+            #apiDiv #message .resultDiv .result {
+                width: 23%;
+                height: 300px;
+                padding: 6px;
+                float: left;
+                text-align: center;
+                cursor: pointer;
+            }
+ 
+                #apiDiv #message .resultDiv .result img {
+                    width: 75%;
+                }
+ 
+                #apiDiv #message .resultDiv .result p {
+                    margin: 0;
+                }
+ 
+                    #apiDiv #message .resultDiv .result p a {
+                        color: #808080;
+                        text-decoration: none;
+                        font-size: 20px;
+                        height: 100px;
+                    }
+ 
+                        #apiDiv #message .resultDiv .result p a:hover {
+                            text-decoration: underline;
+                        }
+ 
+#myModal {
+    color: #000;
+}
+ 
+#reset {
+    padding: 5px 10px;
+    background: #4CAF50;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+}
+ 
+    #reset:hover {
+        color: #4CAF50;
+        background: #FFF;
+    }
