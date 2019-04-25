@@ -1,8 +1,8 @@
 $(document).ready(function () {
     $("#search").click(function (e) {
-        var validate = Validate();
-        $("#output").html(validate);
-        if (validate.length == 0) {
+        var auth = searchDB();
+        $("#output").html(auth);
+        if (auth.length == 0) {
             CallAPI(1);
         }
     });
@@ -35,7 +35,7 @@ $(document).ready(function () {
         });
     }
  
-    function Validate() {
+    function searchDB() {
         var erroroutput = "";
         if ($("#searchInput").val() == "") {
             erroroutput += "Enter Search Text";

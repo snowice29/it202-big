@@ -13,10 +13,10 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* background-image: linear-gradient(to right top, #19e9ce, #00c7e6, #00a0ff, #0072ff, #062ad6); */
+    /* background-image: linear-gradient(to right top, #19e9ce, #00c7e6, #00a0ff, #0072ff, #062ad6);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
     object-fit: cover;
     font-family: 'Raleway',sans-serif;
 }
@@ -49,16 +49,6 @@ body{
     letter-spacing: 1px;
 }
 
-.jumbo{
-    margin-top: 2rem
-}
-
-.jumbotron{
-    height: 90vh;
-    background-image: linear-gradient(to right top, #8519e9, #007dff, #009ff7, #00b19e, #31bb4e);
-    color: white;
-    font-family: 'Raleway',sans-serif;
-}
 
 span{
     font-weight: bold;
@@ -119,8 +109,6 @@ span{
     }
     
 }
-
-
 .form-group{
     display: flex;
     justify-content: center;
@@ -145,21 +133,6 @@ input{
     margin-top: 2rem;
 }
 
-/* MODAL STYLING FOR INFO */
-
-
-#modalTitle{
-    text-align: center;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-modalBody{
-    text-align: center;
-    font-size: 3rem;
-}
-
 .text-center img,
 .result img{
     object-fit: cover;
@@ -169,15 +142,3 @@ modalBody{
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.096);
 }
 
-#reset {
-    padding: 5px 10px;
-    background: #4CAF50;
-    border: none;
-    color: #FFF;
-    cursor: pointer;
-}
-
-    #reset:hover {
-        color: #4CAF50;
-        background: #FFF;
-    }
