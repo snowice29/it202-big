@@ -9,7 +9,7 @@ $(document).ready(function () {
 
 
     // https://api.themoviedb.org/3/search/multi?api_key=5097001ce81d7992e77ee1c379801e36&language=en-US&query=TOm&page=1&include_adult=false
-    
+
 
     function CallAPI(page) {
         $.ajax({
@@ -19,12 +19,12 @@ $(document).ready(function () {
             success: function (result, status, xhr) {
                 var resultHtml = $("<div class=\"resultDiv\"><p>Results:</p>");
                 for (i = 0; i < result["results"].length; i++) {
- 
+
                     var image = result["results"][i]["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
 
-                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + "<strong> Title: </strong>" + result["results"][i]["original_title"] + "<strong> Rating: </strong> "+ result["results"][i]["vote_average"] + "<strong> Released: </strong>" + result["results"][i]["release_date"] +"</a></p></div>");
+                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + "<strong> Title: </strong>" + result["results"][i]["original_title"] + "<strong> Rating: </strong> " + result["results"][i]["vote_average"] + "<strong> Released: </strong>" + result["results"][i]["release_date"] + "</a></p></div>");
                 }
- 
+
                 resultHtml.append("</div>");
                 $("#output").html(resultHtml);
 
@@ -34,7 +34,7 @@ $(document).ready(function () {
             }
         });
     }
- 
+
     function searchDB() {
         var erroroutput = "";
         if ($("#searchInput").val() == "") {
@@ -44,35 +44,44 @@ $(document).ready(function () {
     }
 });
 
-// for map
-    // Initialize and add the map
-    function initMap() {
-        var chicago = { lat: 41.8781, lng: -87.6298 };
-        var map = new google.maps.Map(
-            document.getElementById('map'), { zoom: 14, center: chicago });
-        $.get("https://data.cityofchicago.org/resource/cdmx-wzbz.json",
-            function (response) {
-                console.log("in data callback");
-                var data = response;
-                createMarkers(map, data);
-            });
-    }
-    function createMarkers(map, data) {
-        // console.log(data);
-        $.each(data, function (i, v) {
-            var location = { lat: parseFloat(v.latitude), lng: parseFloat(v.longitude) }
-            var marker = new google.maps.Marker({ position: location, map: map });
-            var contentString = '<strong>Address</strong>: ' + v.street_address + ', <strong>Service Request</strong>: ' + v.service_request_number + ', <strong>Where the graffiti is located: </strong>' + v.where_is_the_graffiti_located_ + ', <strong>Surface: </strong>' + v.what_type_of_surface_is_the_graffiti_on_ + ', <strong>Status: </strong>' + v.status +
-                ', <strong>Completion Date: </strong>' + v.completion_date;
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            
-            marker.infowindow = infowindow;
-            marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            });
-        });
-    }
 
-    
+
+// for map
+// Initialize and add the map
+
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 14
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }

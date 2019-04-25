@@ -24,6 +24,8 @@
     <!-- animate CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
+    <!-- manifest -->
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -31,7 +33,7 @@
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#home">Flix it <img class="logo" src="assets/logo.png" alt="logo"></a>
+        <a class="navbar-brand" href="#home">Flix it <img class="logo" src="assets/logo-512.png" alt="logo"></a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -96,8 +98,6 @@
 
         </div>
 
-
-
     </div>
 
     <!-- LIST -->
@@ -117,7 +117,15 @@
     </div>
 
     <!-- screen three for map -->
-    <div class="content" id="map"></div>
+    <div class="content" id="map">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" id="getLocation">Show Current Position</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -130,12 +138,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <!-- <script src="https://unpkg.com/material-components-web@0.40.0/dist/material-components-web.min.js"></script> -->
 
     <!-- js -->
     <script src="js/main.js"></script>
     <!-- multscreen -->
     <script src="js/multiscreen.js"></script>
+    <script src="sw.js"></script>
 
 
     <script async defer
