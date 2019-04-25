@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $("#submit").click(function (e) {
+    $("#search").click(function (e) {
         var validate = Validate();
-        $("#message").html(validate);
+        $("#output").html(validate);
         if (validate.length == 0) {
             CallAPI(1);
         }
@@ -9,37 +9,67 @@ $(document).ready(function () {
 
 
     // https://api.themoviedb.org/3/search/multi?api_key=5097001ce81d7992e77ee1c379801e36&language=en-US&query=TOm&page=1&include_adult=false
- 
+
+    
+    $("#output").on("click", ".result", function () {
+        var resourceId = $(this).attr("resourceId");
+        $.ajax({
+            url: "https://api.themoviedb.org/3/search/movie" + resourceId + "?language=en-US",
+            data: {
+                api_key: "5097001ce81d7992e77ee1c379801e36"
+            },
+            dataType: 'json',
+            success: function (result, status, xhr) {
+                $("#modalTitle").html(result["title"]);
+
+                var image = result["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w185/" + result["profile_path"];
+
+                var overview = result["overview"] == null ? "No information available" : result["overview"];
+
+                var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + overview + "</p>";
+                resultHtml += "<p>Overview: " + result["overview"] + "</p><p>Release Date: " + result["release_date"] + "";
+
+                $("#modalBody").html(resultHtml)
+
+                $("#myModal").modal("show");
+            },
+            error: function (xhr, status, error) {
+                $("#output").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+            }
+        });
+    });
+
+
     function CallAPI(page) {
         $.ajax({
-            url: "https://api.themoviedb.org/3/search/multi?&query=" + $("#searchInput").val() + "&page=" + page + "&include_adult=false",
+            url: "https://api.themoviedb.org/3/search/movie?language=en-US&query=" + $("#searchInput").val() + "&page=" + page + "&include_adult=false",
             data: { "api_key": "5097001ce81d7992e77ee1c379801e36" },
             dataType: "json",
             success: function (result, status, xhr) {
                 var resultHtml = $("<div class=\"resultDiv\"><p>Results:</p>");
                 for (i = 0; i < result["results"].length; i++) {
  
-                    var image = result["results"][i]["backdrop_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["backdrop_path"];
+                    var image = result["results"][i]["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
 
-                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["name"] + "</a></p></div>")
+                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["original_title"] + "</a></p></div>")
                 }
  
                 resultHtml.append("</div>");
-                $("#message").html(resultHtml);
+                $("#output").html(resultHtml);
 
             },
             error: function (xhr, status, error) {
-                $("#message").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                $("#output").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
             }
         });
     }
  
     function Validate() {
-        var errorMessage = "";
+        var erroroutput = "";
         if ($("#searchInput").val() == "") {
-            errorMessage += "Enter Search Text";
+            erroroutput += "Enter Search Text";
         }
-        return errorMessage;
+        return erroroutput;
     }
 });
 
