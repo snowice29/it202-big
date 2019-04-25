@@ -15,9 +15,9 @@
  */
 
 
-version = '1.0';
+version = '0.1';
 
-let cacheName = 'pwaBasic_' + version;
+let cacheName = 'flixit_' + version;
 
 self.addEventListener('install', e => {
   let timeStamp = Date.now();

@@ -6,11 +6,6 @@
         "src": "/assets/logo-128.png",
         "type": "image/png",
         "sizes": "128x128"
-      },
-      {
-        "src": "/assets/logo-512.png",
-        "type": "image/png",
-        "sizes": "512x512"
       }
     ],
     "start_url": "./index.html",
