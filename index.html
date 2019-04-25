@@ -12,7 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- custom CSS -->
-    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans|Raleway" rel="stylesheet">
@@ -31,7 +31,7 @@
 
     <!-- NAVBAR -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#home">Flix it <img class="logo" src="/assets/logo.png" alt="logo"></a>
+        <a class="navbar-brand" href="#home">Flix it <img class="logo" src="assets/logo.png" alt="logo"></a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -71,17 +71,17 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/assets/blade.jpg" alt="img1" width="100%" height="100%">
+                    <img src="assets/blade.jpg" alt="img1" width="100%" height="100%">
                 </div>
                 <div class="carousel-item">
-                    <img src="/assets/shazam.jpg" alt="img2" width="100%" height="100%">
+                    <img src="assets/shazam.jpg" alt="img2" width="100%" height="100%">
                 </div>
                 <div class="carousel-item">
-                    <img src="/assets/avengers.jpg" alt="img3" width="100%" height="100%">
+                    <img src="assets/avengers.jpg" alt="img3" width="100%" height="100%">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="/assets/llarona.jpg" alt="img4" width="100%" height="100%">
+                    <img src="assets/llarona.jpg" alt="img4" width="100%" height="100%">
                 </div>
             </div>
 
@@ -92,6 +92,8 @@
             <a class="carousel-control-next" href="#demo" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
+
+            
         </div>
 
 
@@ -111,23 +113,6 @@
         <button type="button" id="search" class="btn btn-warning btn-search">Search</button>
         <div class="stuff" id="output"></div>
 
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title text-center " id="modalTitle"></h4>
-                    </div>
-
-
-                    <div class="modal-body animated zoomIn faster" id="modalBody"></div>
-                   <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div>
 
@@ -151,11 +136,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- js -->
-    <script src="/js/main.js"></script>
-    <!-- apiKey -->
-    <script src="/js/apiKey.js"></script>
+    <script src="js/main.js"></script>
     <!-- multscreen -->
-    <script src="/js/multiscreen.js"></script>
+    <script src="js/multiscreen.js"></script>
 
 
     <script async defer

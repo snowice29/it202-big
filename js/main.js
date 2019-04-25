@@ -9,36 +9,7 @@ $(document).ready(function () {
 
 
     // https://api.themoviedb.org/3/search/multi?api_key=5097001ce81d7992e77ee1c379801e36&language=en-US&query=TOm&page=1&include_adult=false
-
     
-    $("#output").on("click", ".result", function () {
-        var resourceId = $(this).attr("resourceId");
-        $.ajax({
-            url: "https://api.themoviedb.org/3/search/movie" + resourceId + "?language=en-US",
-            data: {
-                api_key: "5097001ce81d7992e77ee1c379801e36"
-            },
-            dataType: 'json',
-            success: function (result, status, xhr) {
-                $("#modalTitle").html(result["title"]);
-
-                var image = result["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w185/" + result["profile_path"];
-
-                var overview = result["overview"] == null ? "No information available" : result["overview"];
-
-                var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + overview + "</p>";
-                resultHtml += "<p>Overview: " + result["overview"] + "</p><p>Release Date: " + result["release_date"] + "";
-
-                $("#modalBody").html(resultHtml)
-
-                $("#myModal").modal("show");
-            },
-            error: function (xhr, status, error) {
-                $("#output").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-            }
-        });
-    });
-
 
     function CallAPI(page) {
         $.ajax({
@@ -51,7 +22,7 @@ $(document).ready(function () {
  
                     var image = result["results"][i]["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
 
-                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + result["results"][i]["original_title"] + "</a></p></div>")
+                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + "<strong> Title: </strong>" + result["results"][i]["original_title"] + "<strong> Rating: </strong> "+ result["results"][i]["vote_average"] + "<strong> Released: </strong>" + result["results"][i]["release_date"] +"</a></p></div>");
                 }
  
                 resultHtml.append("</div>");
@@ -87,7 +58,7 @@ $(document).ready(function () {
             });
     }
     function createMarkers(map, data) {
-        console.log(data);
+        // console.log(data);
         $.each(data, function (i, v) {
             var location = { lat: parseFloat(v.latitude), lng: parseFloat(v.longitude) }
             var marker = new google.maps.Marker({ position: location, map: map });
