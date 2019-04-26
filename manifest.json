@@ -3,9 +3,9 @@
     "name": "Flix It",
     "icons": [
       {
-        "src": "/assets/logo-128.png",
+        "src": "/assets/logo-512.png",
         "type": "image/png",
-        "sizes": "128x128"
+        "sizes": "512x512"
       }
     ],
     "start_url": "./index.html",

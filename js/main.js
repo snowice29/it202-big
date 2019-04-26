@@ -7,7 +7,6 @@ $(document).ready(function () {
         }
     });
 
-
     // https://api.themoviedb.org/3/search/multi?api_key=5097001ce81d7992e77ee1c379801e36&language=en-US&query=TOm&page=1&include_adult=false
 
 
@@ -53,7 +52,7 @@ $(document).ready(function () {
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 14
+          zoom: 14,
         });
         infoWindow = new google.maps.InfoWindow;
 
@@ -66,7 +65,7 @@ $(document).ready(function () {
             };
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('You are currently at: ');
             infoWindow.open(map);
             map.setCenter(pos);
           }, function() {
@@ -85,3 +84,6 @@ $(document).ready(function () {
                               'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
       }
+
+
+
