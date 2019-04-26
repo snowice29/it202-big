@@ -3,12 +3,12 @@
     "name": "Flix It",
     "icons": [
       {
-        "src": "/assets/logo-512.png",
+        "src": "assets/logo-512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
     ],
-    "start_url": "./index.html",
+    "start_url": "index.html",
     "background_color": "#3367D6",
     "display": "standalone",
     "scope": "./",
