@@ -2,7 +2,7 @@
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+    navigator.serviceWorker.register('sw.js').then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
@@ -14,11 +14,11 @@ if ('serviceWorker' in navigator) {
 
 var CACHE_NAME = 'flixIt-cache-v1';
 var urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles/main.css',
-  '/js/main.js',
-  '/manifest.json'
+  '.',
+  'index.html',
+  'styles/main.css',
+  'js/main.js',
+  'manifest.json'
 ];
 
 self.addEventListener('install', function(event) {
