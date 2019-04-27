@@ -1,17 +1,17 @@
 {
-    "short_name": "Flix",
-    "name": "Flix It",
-    "icons": [
-      {
-        "src": "assets/logo-512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
-    "start_url": "index.html",
-    "background_color": "#ff5252",
-    "display": "standalone",
-    "scope": "./",
-    "theme_color": "#ff5252"
-  }
-  
+  "name": "Flix It",
+  "short_name": "Flix",
+  "description": "This app lets the user to search for a movie and gives them the poster, release data, and rating of the movie",
+  "icons": [
+    {
+      "src": "assets/logo-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "scope": "./",
+  "theme_color": "#ff5252",
+  "background_color": "#ff5252"
+}
