@@ -20,6 +20,16 @@ body{
     object-fit: cover;
     font-family: 'Raleway',sans-serif;
 }
+
+/* MATERIAL STYLES */
+
+
+
+
+
+
+
+/************************/
 .content{
     display: none;
     /* margin: 1em;    */
@@ -50,13 +60,13 @@ body{
 }
 
 
-span{
-    font-weight: bold;
+/* span{
+    font-weight: bold; */
     /* color: #2c181b; */
-    font-family: 'Anton', sans-serif;
+    /* font-family: 'Anton', sans-serif;
     letter-spacing: 3px;
     text-transform: uppercase;
-}
+} */
 
 .card{
     margin: 0.5rem;
@@ -75,7 +85,6 @@ span{
     text-transform: uppercase;
     margin: 1em;
     text-align: center;
-
 }
 
 #map{
@@ -92,12 +101,12 @@ span{
 
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 768px){
+/* @media only screen and (max-width: 768px){
 
     
 
 }
-
+ */
 
 @media only screen and (max-width: 1200px){
 
@@ -136,7 +145,7 @@ input{
     border-radius: 2rem;
 }
 
-#stuff{
+.stuff{
     margin-top: 2rem;
 }
 
