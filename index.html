@@ -9,6 +9,11 @@
     <meta name="theme-color" content="#ff5252" />
     <meta name="Description" content="Search for movies and get their release dates, ratings, and posters.">
 
+    <!-- MATERIAL COMPONENTS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/material-components-web@0.40.0/dist/material-components-web.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,49 +23,18 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Anton|Open+Sans|Raleway" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
 
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
     <!-- manifest -->
     <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet"
-        href="https://unpkg.com/material-components-web@0.40.0/dist/material-components-web.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 
 <body>
-
-
-    <!-- NAVBAR -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#home">Flix it <img class="logo" src="assets/logo-512.png" alt="logo"></a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#list">Search</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#map">Map</a>
-                </li>
-            </ul>
-        </div>
-    </nav> -->
-
 
     <!-- MATERIAL TOP APP BAR -->
     <!-- top nav bar -->
@@ -77,7 +51,7 @@
     <aside class="mdc-drawer mdc-drawer--modal" data-mdc-auto-init="MDCDrawer">
         <div class="mdc-drawer__header">
             <h3 class="mdc-drawer__title">Flix It</h3>
-            <h6 class="mdc-drawer__subtitle">snowice29.github.io</h6>
+            <h6 class="mdc-drawer__subtitle">snowice29</h6>
         </div>
         <div class="mdc-drawer__content">
             <nav class="mdc-list">
@@ -95,15 +69,7 @@
     </div>
 
 
-
-
-
-    <!-- MULTI SCREEN -->
-
-    
-   
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery,Popper.js,Bootstrap JS, MaterialJS -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -113,10 +79,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/material-components-web@0.40.0/dist/material-components-web.min.js"></script>
+    
+    <!-- CUSTOM JS -->
     <!-- js -->
     <script src="js/main.js"></script>
-    <!-- multscreen -->
-    <script src="js/multiscreen.js"></script>
     <script src="sw.js"></script>
     <script src="js/screen.js"></script>
 

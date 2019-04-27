@@ -33,7 +33,7 @@ Initialize and add the map -->
                 };
 
                 infoWindow.setPosition(pos);
-                infoWindow.setContent('You are currently at: ');
+                infoWindow.setContent('You are currently at: ' + setPosition);
                 infoWindow.open(map);
                 map.setCenter(pos);
             }, function () {
