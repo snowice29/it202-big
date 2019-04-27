@@ -158,3 +158,13 @@ input{
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.096);
 }
 
+.flix{
+    font-family: 'Anton',sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.mdc-top-app-bar__row--theme-primary{
+    background-color: #ff5252;
+    font-family: 'Raleway',sans-serif;
+}
