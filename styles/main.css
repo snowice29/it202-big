@@ -141,3 +141,10 @@ input{
     color: white;
     background-color: #70a1ff;
 }
+
+.mdc-card{
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+    background: #000;
+}
