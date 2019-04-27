@@ -13,60 +13,19 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* background-image: linear-gradient(to right top, #19e9ce, #00c7e6, #00a0ff, #0072ff, #062ad6);
+    background: #212121;
+    color: #fff;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover; */
+    background-size: cover;
     object-fit: cover;
     font-family: 'Raleway',sans-serif;
 }
 
-/* MATERIAL STYLES */
-
-
-
-
-
-
-
-/************************/
-.content{
-    display: none;
-    /* margin: 1em;    */
-}
 .logo{
     width: 40px;
     height: 40px;
 }
-
-.navbar{
-    background-color: #3d3d3d;
-    font-size: 1.4rem;
-
-}
-.navbar-brand{
-    font-size: 2rem;
-    font-family: 'Anton', sans-serif;
-    text-transform: uppercase;
-    display: flex;
-    margin: 0 auto;
-}
-
-.nav-link{
-    font-size: 1.4rem;
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-
-/* span{
-    font-weight: bold; */
-    /* color: #2c181b; */
-    /* font-family: 'Anton', sans-serif;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-} */
 
 .card{
     margin: 0.5rem;
@@ -88,9 +47,10 @@ body{
 }
 
 #map{
-    height: 80vh; 
+    height: 100vh; 
     width: 100%;
     margin: 40px auto; 
+    color: #111;
 }
 
 .abs-center-x {
@@ -114,14 +74,11 @@ body{
         font-size: 1.5rem;
     }
 
-    #jumbo-text{
-        font-size: 1rem;
-    }
-
     #map{
         height: 60vh; 
         width: 100%;
         margin: 40px auto; 
+        color: #111;
     }
     
 }
@@ -162,9 +119,25 @@ input{
     font-family: 'Anton',sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: white;
 }
 
 .mdc-top-app-bar__row--theme-primary{
     background-color: #ff5252;
     font-family: 'Raleway',sans-serif;
+}
+
+.mdc-image-list__label{
+    color: white;
+}
+
+.mdc-button--outlined{
+    color: white;
+    transition: all 0.3s;
+    background-color: #3742fa;
+    border-radius: 1rem;
+}
+.mdc-button--outlined:hover{
+    color: white;
+    background-color: #70a1ff;
 }
