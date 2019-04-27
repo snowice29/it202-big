@@ -15,23 +15,30 @@
  -->
 <link rel="stylesheet" href="styles/main.css">
 
-<div class="container">
-    <div class="row">
-        <div class="col">
+
+
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell">
+
             <div class="mdc-text-field">
-                <input type="text" id="my-text-field" class="mdc-text-field__input">
-                <label class="mdc-floating-label" for="my-text-field">Search here</label>
+                <input type="text" id="searchInput" class="mdc-text-field__input">
+                <label class="mdc-floating-label" for="searchInput">Search here</label>
                 <div class="mdc-line-ripple"></div>
-              </div>
-            <button type="button" id= "search" class="mdc-button">
+            </div>
+            <button type="button" id="search" class="mdc-button">
                 <span class="mdc-button--outlined">Submit</span>
             </button>
-            
+
         </div>
     </div>
 </div>
 
-<div class="stuff" id="output"></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="js/main.js"></script>
+
+
+
+    <div class="stuff" id="output"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="js/main.js"></script>
