@@ -16,6 +16,36 @@ Initialize and add the map -->
 
 
 <script>
+ // Initialize and add the map
+    // function initMap() {
+    //     var chicago = { lat: 41.8781, lng: -87.6298 };
+    //     var map = new google.maps.Map(
+    //         document.getElementById('map'), { zoom: 14, center: chicago });
+    //     $.get("https://data.cityofchicago.org/resource/u9xt-hiju.json",
+    //         function (response) {
+    //             console.log("in data callback");
+    //             var data = response;
+    //             createMarkers(map, data);
+    //         });
+    // }
+    // function createMarkers(map, data) {
+    //     console.log(data);
+    //     $.each(data, function (i, v) {
+    //         var location = { lat: parseFloat(v.latitude), lng: parseFloat(v.longitude) }
+    //         var marker = new google.maps.Marker({ position: location, map: map });
+    //         var contentString = '<strong>Street Name:</strong> ' + v.street_name + ', <strong>Permit Status</strong>: ' + v.status + ', <strong>Zone: </strong>' + v.zone + ', <strong>Starting from address </strong>' + v.address_range_high + ', <strong>Zone ends at address: </strong>' + v.address_range_low +
+    //             ', <strong>Street Direction: </strong>' + v.street_direction;
+    //         var infowindow = new google.maps.InfoWindow({
+    //             content: contentString
+    //         });
+            
+    //         marker.infowindow = infowindow;
+    //         marker.addListener('click', function () {
+    //             infowindow.open(map, marker);
+    //         });
+    //     });
+    // }
+
     var map, infoWindow;
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -23,7 +53,6 @@ Initialize and add the map -->
             zoom: 14,
         });
         infoWindow = new google.maps.InfoWindow;
-
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -31,9 +60,8 @@ Initialize and add the map -->
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-
                 infoWindow.setPosition(pos);
-                infoWindow.setContent('You are currently at: ');
+                infoWindow.setContent('You are currently here');
                 infoWindow.open(map);
                 map.setCenter(pos);
             }, function () {
@@ -44,7 +72,6 @@ Initialize and add the map -->
             handleLocationError(false, infoWindow, map.getCenter());
         }
     }
-
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
@@ -52,7 +79,7 @@ Initialize and add the map -->
             'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
-
+   
 </script>
 
 <script async defer
