@@ -1,18 +1,18 @@
 const cacheName = 'v1';
 
 const cacheAssets = [
-  '.index.html',
-  './screen-content/_about.html',
-  './screen-content/_search.html',
-  './screen-content/_home.html',
-  './styles/main.css',
-  './js/main.js',
-  './js/screen.js',
-  './assets/avengers.jpg',
-  './assets/llarona.jpg',
-  './assets/shazam.jpg',
-  './assets/wick.png',
-  './assets/logo-512.png',
+  'index.html',
+  'screen-content/_about.html',
+  'screen-content/_search.html',
+  'screen-content/_home.html',
+  'styles/main.css',
+  'js/main.js',
+  'js/screen.js',
+  'assets/avengers.jpg',
+  'assets/llarona.jpg',
+  'assets/shazam.jpg',
+  'assets/wick.png',
+  'assets/logo-512.png',
 ];
 
 // Call Install Event
