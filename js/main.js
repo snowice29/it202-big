@@ -21,7 +21,7 @@ $(document).ready(function () {
 
                     var image = result["results"][i]["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["results"][i]["poster_path"];
 
-                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + "<strong> Title: </strong>" + result["results"][i]["original_title"] + "<strong> Rating: </strong> " + result["results"][i]["vote_average"] + "<strong> Released: </strong>" + result["results"][i]["release_date"] + "</a></p></div>");
+                    resultHtml.append("<div class=\"result\" resourceId=\"" + result["results"][i]["id"] + "\">" + "<img src=\"" + image + "\" />" + "<p><a>" + "<strong> Title: </strong>" + result["results"][i]["original_title"] + "<strong> Rating: </strong> " + result["results"][i]["vote_average"] + "<strong> Released: </strong>" + result["results"][i]["release_date"] + "<strong> Overview: </strong> " +result["results"][i]["overview"]+"</a></p></div>");
                 }
 
                 resultHtml.append("</div>");
