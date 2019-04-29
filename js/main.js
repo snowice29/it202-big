@@ -44,15 +44,12 @@ $(document).ready(function () {
 });
 
 
-
-
+// Make sure sw are supported
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-}
-
-document.querySelector('#show').addEventListener('click', () => {
-    const iconUrl = document.querySelector('select').selectedOptions[0].value;
-    let imgElement = document.createElement('img');
-    imgElement.src = iconUrl;
-    document.querySelector('#container').appendChild(imgElement);
-});
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('../sw_cached_pages.js')
+        .then(reg => console.log('Service Worker: Registered (Pages)'))
+        .catch(err => console.log(`Service Worker: Error: ${err}`));
+    });
+  }
